@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import DoctorList from './components/DoctorList'
+import DoctorForm from './components/DoctorForm'
 
 class App extends Component {
     constructor (props) {
@@ -25,9 +26,18 @@ class App extends Component {
         }
     }
 
+    handleRegistro = (nombres, apellidos, telefono) => {
+        console.log(nombres)
+        console.log(apellidos)
+        console.log(telefono)
+        //TODO: enviar al rest api los datos POST
+    }
+
+
   render() {
     return (
       <div className="container-fluid">
+            <DoctorForm handleRegistro={this.handleRegistro} />
             <DoctorList doctors={this.state.doctors}  direccion={'en cochabamba'} />
       </div>
     );
