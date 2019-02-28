@@ -11,10 +11,11 @@ class App extends Component {
         super(props)
         this.state = {
             doctors: [],
-            nombres: null,
-            apellidos: null,
-            telefono: null,
-            data: {}
+            data: {
+                nombres: '',
+                apellidos: '',
+                telefono: '',
+            }
         }
     }
 
@@ -41,13 +42,14 @@ class App extends Component {
             let aux_doctors = this.state.doctors
             aux_doctors.push(res.data)
             this.setState({doctors: aux_doctors})
+            this.setState({data: { nombres:'', apellidos: '', telefono:'' }})
         })
     }
 
   render() {
     return (
       <div className="container-fluid">
-            <DoctorFormx handleInput={this.handleInput} handleBoton={this.handleBoton} />
+            <DoctorFormx handleInput={this.handleInput} handleBoton={this.handleBoton} data={this.state.data} />
             <DoctorList doctors={this.state.doctors} direccion={'en cochabamba'} />
       </div>
     );

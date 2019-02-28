@@ -1,13 +1,13 @@
 import React from 'react'
 import './DoctorForm.css'
-const DoctorFormx = ({handleInput, handleBoton}) => {
+const DoctorFormx = ({handleInput, handleBoton, data}) => {
 
     return  (
            <div className="row">
                <div className="col-4">
                    <div className="row">
                        <div className="col-12">Nombres:</div>
-                       <input className="offset-1 col-10" type="text" placeholder="Nombres" name="nombres" onChange={handleInput}  />
+                       <input className="offset-1 col-10" type="text" placeholder="Nombres" name="nombres" onChange={handleInput} value={data.nombres}  />
                    </div>
                </div>
                <div className="col-4">
@@ -15,7 +15,7 @@ const DoctorFormx = ({handleInput, handleBoton}) => {
                        <div className="col-12">
                        Apellidos:
                        </div>
-                       <input className="offset-1 col-10 "  type="text" placeholder="Apellidos" name="apellidos" onChange={handleInput} />
+                       <input className="offset-1 col-10 "  type="text" placeholder="Apellidos" name="apellidos" onChange={handleInput} value={data.apellidos} />
                    </div>
                </div>
                <div className="col-4">
@@ -23,7 +23,7 @@ const DoctorFormx = ({handleInput, handleBoton}) => {
                        <div className="col-12">
                            Telefono:
                        </div>
-                       <input className="offset-1 col-10 " type="number" name="telefono" placeholder="Telefono" onChange={handleInput}/>
+                       <input className="offset-1 col-10 " type="number" name="telefono" placeholder="Telefono" onChange={handleInput} value={data.telefono}/>
                    </div>
                </div>
                <div className="col-12 ">

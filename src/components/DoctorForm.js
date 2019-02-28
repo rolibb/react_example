@@ -5,14 +5,15 @@ const DoctorForm = ({handleRegistro}) => {
     let nombres
     let apellidos
     let telefono
-
+    let form
     return  (
-           <form className="row" onSubmit={(event) => {
+           <form ref = {(el) => { form = el }} className="row" onSubmit={(event) => {
                event.preventDefault()
                console.log('ejecucion del boton')
                handleRegistro(nombres.value,
                    apellidos.value,
                    telefono.value)
+
            }} >
                <div className="col-4">
                    <div className="row">
@@ -55,8 +56,6 @@ const DoctorForm = ({handleRegistro}) => {
                    </div>
                </div>
            </form>
-
    )
 }
-
 export default DoctorForm
