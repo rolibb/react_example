@@ -1,26 +1,33 @@
-import React  from 'react'
+import React, {Component}  from 'react'
 import DoctorItem from './DoctorItem'
 
-const DoctorList = ({doctors, direccion}) => (
-// const DoctorList = ({...data}) => (
-    <div className="container">
-        <div className="col-12">
-            Cantidad de doctores: {doctors.length} {direccion}
-        </div>
-        {  doctors.map((doctor, i) => <DoctorItem key={i}  doctor={doctor} />) }
-    </div>
-)
-
-// const DoctorList = ({doctors}) => {
-//     let count = doctors.length
-//     return (
-//         <div className="container">
-//             <div className="col-12">
-//                 Cantidad de doctores: {count}
-//             </div>
-//             {  doctors.map((doctor, i) => <div key={i} className="col-12">{doctor.nombre}</div> ) }
+// const DoctorList = ({doctors, direccion}) => (
+//     <div className="container">
+//         <div className="col-12">
+//             Cantidad de doctores: {doctors.length} {direccion}
 //         </div>
-//     )
-// }
+//         {  doctors.map((doctor, i) => <DoctorItem key={i}  doctor={doctor} />) }
+//     </div>
+// )
+
+class DoctorList extends Component {
+    render() {
+
+        // let doctors = this.props.doctors
+        // let direccion = this.props.direccion
+
+        let { doctors, direccion } = this.props
+
+        return (
+            <div className="container">
+                <div className="col-12">
+                    Cantidad de doctores: {doctors.length} {direccion}
+                </div>
+                {  doctors.map((doctor, i) => <DoctorItem key={i}  doctor={doctor} />) }
+            </div>
+        )
+    }
+}
+
 
 export default DoctorList

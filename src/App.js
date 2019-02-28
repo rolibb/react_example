@@ -25,6 +25,12 @@ class App extends Component {
         })
     }
 
+    // componentDidMount(){
+    //     getDoctors().then(res => {
+    //         this.setState({doctors: res.data})
+    //     })
+    // }
+
     handleInput = (ev) => {
         ev.preventDefault()
 
@@ -43,6 +49,8 @@ class App extends Component {
             aux_doctors.push(res.data)
             this.setState({doctors: aux_doctors})
             this.setState({data: { nombres:'', apellidos: '', telefono:'' }})
+        }).catch(err => {
+            //TODO implementar mesanje de error de registro de medico
         })
     }
 
