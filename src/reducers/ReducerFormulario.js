@@ -11,8 +11,10 @@ const ReducerFomulario= (state=INITIAL_STATE, action) => {
                 ...state,
                 [action.payload.name]:action.payload.value
             }
-        // case 'REGISTRAR_DOCTOR':
-        //     return
+        case 'CLEAN_INPUTS':
+            return {
+                ...INITIAL_STATE
+            }
         default:
             return state
     }

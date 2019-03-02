@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import DoctorFormx from '../components/DoctorFormx'
-import {UpdateFormulario, RegistrarDoctor} from '../actions/actions'
+import {UpdateFormulario, RegistrarDoctor, CleanInputs} from '../actions/actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -24,6 +24,7 @@ const mapDispatchToProps = (dispatch) => {
         },
         handleBoton: (data) => {
             dispatch(RegistrarDoctor(data))
+            dispatch(CleanInputs())
         }
     }
 }

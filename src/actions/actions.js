@@ -24,3 +24,9 @@ export const CargarDoctores = (doctores) => {
         payload: doctores
     }
 }
+
+export const CleanInputs = () => {
+    return {
+        type: 'CLEAN_INPUTS'
+    }
+}
