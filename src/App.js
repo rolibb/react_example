@@ -5,6 +5,8 @@ import DoctorList from './components/DoctorList'
 import DoctorFormx from './components/DoctorFormx'
 import {registrarDoctor, getDoctors} from './services/DoctorService'
 
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+
 class App extends Component {
 
     constructor (props) {
@@ -56,13 +58,19 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
-            <DoctorFormx handleInput={this.handleInput} handleBoton={this.handleBoton} data={this.state.data} />
-            <DoctorList doctors={this.state.doctors} direccion={'en cochabamba'} />
-      </div>
+        <div className="container-fluid">
+              <DoctorFormx handleInput={this.handleInput} handleBoton={this.handleBoton} data={this.state.data} />
+              <DoctorList doctors={this.state.doctors} direccion={'en cochabamba'} />
+        </div>
     );
   }
 }
+// <Router>
+//     <Route exact path="/" component={<DoctorList doctors={this.state.doctors} direccion={'en cochabamba'} } />
+//     <Route path="/about" component={About} />
+// </Router>
+
+
 
 // <DoctorForm handleRegistro={this.handleRegistro} />
 

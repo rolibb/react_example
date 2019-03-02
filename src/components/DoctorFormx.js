@@ -1,13 +1,13 @@
 import React from 'react'
 import './DoctorForm.css'
-const DoctorFormx = ({handleInput, handleBoton, data}) => {
+const DoctorFormx = ({handleInput, handleBoton, formulario}) => {
 
     return  (
            <div className="row">
                <div className="col-4">
                    <div className="row">
                        <div className="col-12">Nombres:</div>
-                       <input className="offset-1 col-10" type="text" placeholder="Nombres" name="nombres" onChange={handleInput} value={data.nombres}  />
+                       <input className="offset-1 col-10" type="text" placeholder="Nombres" name="nombres" onChange={handleInput} value={formulario.nombres}  />
                    </div>
                </div>
                <div className="col-4">
@@ -15,7 +15,7 @@ const DoctorFormx = ({handleInput, handleBoton, data}) => {
                        <div className="col-12">
                        Apellidos:
                        </div>
-                       <input className="offset-1 col-10 "  type="text" placeholder="Apellidos" name="apellidos" onChange={handleInput} value={data.apellidos} />
+                       <input className="offset-1 col-10 "  type="text" placeholder="Apellidos" name="apellidos" onChange={handleInput} value={formulario.apellidos} />
                    </div>
                </div>
                <div className="col-4">
@@ -23,12 +23,16 @@ const DoctorFormx = ({handleInput, handleBoton, data}) => {
                        <div className="col-12">
                            Telefono:
                        </div>
-                       <input className="offset-1 col-10 " type="number" name="telefono" placeholder="Telefono" onChange={handleInput} value={data.telefono}/>
+                       <input className="offset-1 col-10 " type="number" name="telefono" placeholder="Telefono" onChange={handleInput} value={formulario.telefono}/>
                    </div>
                </div>
                <div className="col-12 ">
                    <div className="row">
-                       <button type="button" onClick={handleBoton} className="col-4 btn btn-primary boton_registrar">
+                       <button type="button" onClick={(ev) => {
+                           ev.preventDefault()
+                           handleBoton(formulario)
+
+                       }} className="col-4 btn btn-primary boton_registrar">
                        Registrar Medico
                        </button>
                    </div>

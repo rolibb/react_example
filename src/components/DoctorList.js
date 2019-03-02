@@ -11,10 +11,13 @@ import DoctorItem from './DoctorItem'
 // )
 
 class DoctorList extends Component {
-    render() {
 
-        // let doctors = this.props.doctors
-        // let direccion = this.props.direccion
+    componentDidMount= () => {
+        let {getDoctors} = this.props
+        getDoctors()
+    }
+
+    render() {
 
         let { doctors, direccion } = this.props
 

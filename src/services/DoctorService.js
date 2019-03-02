@@ -5,6 +5,6 @@ export const registrarDoctor = (data) => {
     return axios.post(url + '/doctors', data)
 }
 
-export const getDoctors = () => {
+export const getDoctorsApi = () => {
     return axios.get(url + '/doctors')
 }
