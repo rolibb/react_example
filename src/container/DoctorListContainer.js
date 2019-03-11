@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
 import DoctorList from '../components/DoctorList'
-import { getDoctorsApi } from '../services/DoctorService'
-import {CargarDoctores} from '../actions/actions'
+import { getDoctorsApi, deleteDoctor } from '../services/DoctorService'
+import {CargarDoctores, DeleteDoctor} from '../actions/actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -18,6 +18,15 @@ const mapDispatchToProps = (dispatch) => {
             }).catch(err => {
                 console.log(err)
             })
+        },
+        deleteDoctor: (doctor_id) => {
+            deleteDoctor(doctor_id).then(res => {
+                dispatch(DeleteDoctor(doctor_id))
+            }).catch(err => {
+                console.log(err)
+            })
+            //TODO eliminar doctor en el api
+            // console.log(' todo implement delete doctor', doctor_id)
         }
     }
 }

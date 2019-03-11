@@ -8,3 +8,7 @@ export const registrarDoctor = (data) => {
 export const getDoctorsApi = () => {
     return axios.get(url + '/doctors')
 }
+
+export const deleteDoctor = (id) => {
+    return axios.delete(url+ '/doctors/'+ id)
+}

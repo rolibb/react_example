@@ -19,14 +19,14 @@ class DoctorList extends Component {
 
     render() {
 
-        let { doctors, direccion } = this.props
+        let { doctors, direccion, deleteDoctor } = this.props
 
         return (
             <div className="container">
                 <div className="col-12">
                     Cantidad de doctores: {doctors.length} {direccion}
                 </div>
-                {  doctors.map((doctor, i) => <DoctorItem key={i}  doctor={doctor} />) }
+                {  doctors.map((doctor, i) => <DoctorItem key={i}  doctor={doctor} deleteDoctor={deleteDoctor} />) }
             </div>
         )
     }

@@ -11,6 +11,14 @@ const ReducerDoctors = (state=INITIAL_STATE, action) => {
                 ...state,
                 ...action.payload
             ]
+        case 'DELETE_DOCTOR':
+            // let doctores = state
+            return state.filter(doctor => doctor.id != action.payload.id)
+            // return doctores.filter(doctor => {
+            //     if (doctor.id != action.payload.id) {
+            //         return doctor
+            //     }
+            // })
         default:
             return state
     }

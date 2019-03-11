@@ -30,3 +30,10 @@ export const CleanInputs = () => {
         type: 'CLEAN_INPUTS'
     }
 }
+
+export const DeleteDoctor = (doctor_id) => {
+    return {
+        type: 'DELETE_DOCTOR',
+        payload: { id:doctor_id }
+    }
+}
