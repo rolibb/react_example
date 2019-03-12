@@ -1,4 +1,5 @@
 import React, {Component}  from 'react'
+import {Link} from 'react-router-dom'
 import DoctorItem from './DoctorItem'
 
 // const DoctorList = ({doctors, direccion}) => (
@@ -23,6 +24,9 @@ class DoctorList extends Component {
 
         return (
             <div className="container">
+                <div className="col-12">
+                    <Link to="/crearDoctor/">Crear Doctor</Link>
+                </div>
                 <div className="col-12">
                     Cantidad de doctores: {doctors.length} {direccion}
                 </div>

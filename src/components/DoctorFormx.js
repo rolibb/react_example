@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './DoctorForm.css'
 const DoctorFormx = ({handleInput, handleBoton, formulario}) => {
 
@@ -35,6 +36,10 @@ const DoctorFormx = ({handleInput, handleBoton, formulario}) => {
                        }} className="col-4 btn btn-primary boton_registrar">
                        Registrar Medico
                        </button>
+
+                       <Link className="col-4 btn btn-warning" to="/">
+                        Cancelar
+                       </Link>
                    </div>
                </div>
            </div>
