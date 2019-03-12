@@ -8,7 +8,6 @@ const ReducerDoctors = (state=INITIAL_STATE, action) => {
             }]
         case 'CARGAR_DOCTORES':
             return [
-                ...state,
                 ...action.payload
             ]
         case 'DELETE_DOCTOR':
