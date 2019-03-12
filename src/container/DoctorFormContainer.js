@@ -2,6 +2,7 @@ import {connect} from 'react-redux'
 import DoctorFormx from '../components/DoctorFormx'
 import {UpdateFormulario, RegistrarDoctor, CleanInputs} from '../actions/actions'
 import {registrarDoctor} from '../services/DoctorService'
+import {Redirect} from 'react-router-dom'
 
 const mapStateToProps = (state) => {
     return {
@@ -9,7 +10,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch,  ownProps) => {
     return {
         handleInput: (ev) => {
             ev.preventDefault()
@@ -31,6 +32,7 @@ const mapDispatchToProps = (dispatch) => {
             })
 
             dispatch(CleanInputs())
+            ownProps.history.push('/')
         }
     }
 }
