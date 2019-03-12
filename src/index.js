@@ -8,6 +8,7 @@ import { createStore } from 'redux';
 import Doctor from './reducers';
 import DoctorFormContainer from './container/DoctorFormContainer'
 import DoctorListContainer from './container/DoctorListContainer'
+import DoctorEditarContainer from './container/DoctorEditarContainer'
 
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
@@ -24,6 +25,7 @@ const store = createStore(Doctor)
             <div>
                 <Route path="/" exact component={DoctorListContainer} />
                 <Route path="/crearDoctor/" component={DoctorFormContainer} />
+                <Route path="/editarDoctor/:id" component={DoctorEditarContainer} />
             </div>
         </Router>
         </Provider>, document.getElementById('root'));

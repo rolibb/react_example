@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './DoctorItem.css'
 
 const DoctorItem = ({doctor, deleteDoctor}) => (
@@ -16,6 +17,7 @@ const DoctorItem = ({doctor, deleteDoctor}) => (
             >
                 Eliminar
             </button>
+            <Link className="col" to={'/editarDoctor/'+doctor.id} > Editar Doctor </Link>
         </div>
     </div>
 )
