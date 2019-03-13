@@ -4,7 +4,8 @@ import './index.css';
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk'
 import Doctor from './reducers';
 import DoctorFormContainer from './container/DoctorFormContainer'
 import DoctorListContainer from './container/DoctorListContainer'
@@ -12,7 +13,7 @@ import DoctorEditarContainer from './container/DoctorEditarContainer'
 
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
-const store = createStore(Doctor)
+const store = createStore(Doctor, applyMiddleware(thunk))
 
 // ReactDOM.render(<Provider store={store}>
 //         <DoctorFormContainer />

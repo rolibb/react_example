@@ -1,7 +1,6 @@
 import {connect} from 'react-redux'
 import DoctorFormx from '../components/DoctorFormx'
-import {UpdateFormulario, RegistrarDoctor, CleanInputs} from '../actions/actions'
-import {registrarDoctor} from '../services/DoctorService'
+import {UpdateFormulario, RegistrarDoctor, CleanInputs, registrarDoctorAction} from '../actions/actions'
 import {Redirect} from 'react-router-dom'
 
 const mapStateToProps = (state) => {
@@ -25,13 +24,7 @@ const mapDispatchToProps = (dispatch,  ownProps) => {
             dispatch(UpdateFormulario(name, value))
         },
         handleBoton: (data) => {
-            registrarDoctor(data).then(res => {
-                dispatch(RegistrarDoctor(res.data))
-            }).catch(err => {
-                console.log(err)
-            })
-
-            dispatch(CleanInputs())
+            dispatch(registrarDoctorAction(data))
             ownProps.history.push('/')
         }
     }

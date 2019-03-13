@@ -1,3 +1,4 @@
+import {registrarDoctor} from '../services/DoctorService'
 
 export const UpdateFormulario = (name, value) => {
     return {
@@ -42,5 +43,17 @@ export const ActualizarMedico = (name, value, doctor_id) => {
     return {
         type: 'ACTUALIZAR_MEDICO',
         payload: {name, value, doctor_id}
+    }
+}
+
+export const registrarDoctorAction = (data) => {
+    return dispatch => {
+        registrarDoctor(data).then(res => {
+            dispatch(RegistrarDoctor(res.data))
+            dispatch(CleanInputs())
+            
+        }).catch(err => {
+            console.log(err)
+        })
     }
 }
