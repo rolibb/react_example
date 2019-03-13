@@ -19,7 +19,17 @@ const ReducerDoctors = (state=INITIAL_STATE, action) => {
             //     }
             // })
         case 'ACTUALIZAR_MEDICO':
-            //TODO actualizar medico
+            return state.map(doctor => {
+                if (doctor.id != action.payload.doctor_id) {
+                    return doctor
+                }
+
+                return {
+                    ...doctor,
+                    [action.payload.name]: action.payload.value
+                }
+            })
+
         default:
             return state
     }

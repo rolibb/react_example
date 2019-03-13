@@ -31,8 +31,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         handleInput: (ev) => {
             ev.preventDefault()
             let { name, value } = ev.target
-            console.log(name)
-            console.log(value)
+
+            if (name == 'telefono') {
+                value = Number.parseInt(value)
+            }
+            // console.log(name)
+            // console.log(value)
             dispatch(ActualizarMedico(name, value, ownProps.match.params.id))
         }
     }
