@@ -18,6 +18,8 @@ const ReducerDoctors = (state=INITIAL_STATE, action) => {
             //         return doctor
             //     }
             // })
+        case 'ACTUALIZAR_MEDICO':
+            //TODO actualizar medico
         default:
             return state
     }

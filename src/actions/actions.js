@@ -37,3 +37,10 @@ export const DeleteDoctor = (doctor_id) => {
         payload: { id:doctor_id }
     }
 }
+
+export const ActualizarMedico = (name, value, doctor_id) => {
+    return {
+        type: 'ACTUALIZAR_MEDICO',
+        payload: {name, value, doctor_id}
+    }
+}

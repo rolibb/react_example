@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
 import DoctorEditar from '../components/DoctorEditar'
-import {UpdateFormulario, RegistrarDoctor, CleanInputs} from '../actions/actions'
-import {registrarDoctor} from '../services/DoctorService'
+import {ActualizarMedico} from '../actions/actions'
+// import {registrarDoctor} from '../services/DoctorService'
 
 // const getDoctor= (doctors, props) => {
 //     console.log(props.match.params.id)
@@ -26,8 +26,15 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
+        handleInput: (ev) => {
+            ev.preventDefault()
+            let { name, value } = ev.target
+            console.log(name)
+            console.log(value)
+            dispatch(ActualizarMedico(name, value, ownProps.match.params.id))
+        }
     }
 }
 

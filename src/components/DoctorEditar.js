@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DoctorEditar= ({doctor}) =>  {
+const DoctorEditar= ({doctor, handleInput}) =>  {
     console.log(doctor)
 
     return (
@@ -8,19 +8,19 @@ const DoctorEditar= ({doctor}) =>  {
             <div className="col-4">
                 <div className="row">
                     <div className="col-12">Nombres</div>
-                    <input className="offset-1 col-10" type="text" value={doctor.nombres} />
+                    <input className="offset-1 col-10" type="text" value={doctor.nombres} name="nombres" onChange={handleInput} />
                 </div>
             </div>
             <div className="col-4">
                 <div className="row">
                     <div className="col-12">Apellidos </div>
-                    <input className="offset-1 col-10" type="text"  value={doctor.apellidos} />
+                    <input className="offset-1 col-10" type="text"  value={doctor.apellidos} name="apellidos" onChange={handleInput} />
                 </div>
             </div>
             <div className="col-4">
                 <div className="row">
                     <div className="col-12">Telefono</div>
-                    <input className="offset-1 col-10" type="text" value={doctor.telefono}  />
+                    <input className="offset-1 col-10" type="number" value={doctor.telefono} name="telefono" onChange={handleInput} />
                 </div>
             </div>
             <div className="col-12">
