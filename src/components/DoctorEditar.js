@@ -1,6 +1,6 @@
 import React from 'react'
-
-const DoctorEditar= ({doctor, handleInput}) =>  {
+import {Link} from 'react-router-dom'
+const DoctorEditar= ({doctor, handleInput, handleBoton}) =>  {
     console.log(doctor)
 
     return (
@@ -25,12 +25,15 @@ const DoctorEditar= ({doctor, handleInput}) =>  {
             </div>
             <div className="col-12">
                 <div className="row">
-                <button type="button" className="col-4 btn btn-primary">
+                <button type="button" className="col-4 btn btn-primary" onClick={(ev) => {
+                    ev.preventDefault()
+                    handleBoton(doctor)
+                }}>
                     Actualizar Medico
                 </button>
-                <button type="button" className="col-4 btn btn-primary">
-                    Cancelar
-                </button>
+                <Link className="col-4 btn btn-warning" to="/">
+                 Cancelar
+                </Link>
                 </div>
             </div>
         </div>

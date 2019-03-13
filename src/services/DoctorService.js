@@ -12,3 +12,8 @@ export const getDoctorsApi = () => {
 export const deleteDoctor = (id) => {
     return axios.delete(url+ '/doctors/'+ id)
 }
+
+
+export const UpdateDoctor = (doctor) => {
+    return axios.put(url + '/doctors/' + doctor.id, doctor)
+}
