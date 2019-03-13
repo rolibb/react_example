@@ -1,4 +1,4 @@
-import {registrarDoctor, getDoctorsApi, deleteDoctor} from '../services/DoctorService'
+import {registrarDoctor, getDoctorsApi, deleteDoctor, UpdateDoctor} from '../services/DoctorService'
 
 export const UpdateFormulario = (name, value) => {
     return {
@@ -72,6 +72,17 @@ export const DeleteDoctorAction = (doctor_id) => {
     return dispatch => {
         deleteDoctor(doctor_id).then(res => {
             dispatch(DeleteDoctor(doctor_id))
+        }).catch(err => {
+            console.log(err)
+        })
+    }
+}
+
+export const UpdateDoctorAction = (doctor, history) => {
+    return dispatch => {
+        UpdateDoctor(doctor).then(res => {
+            // console.log(res)
+            history.push('/')
         }).catch(err => {
             console.log(err)
         })

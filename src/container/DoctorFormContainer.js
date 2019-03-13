@@ -1,7 +1,6 @@
 import {connect} from 'react-redux'
 import DoctorFormx from '../components/DoctorFormx'
-import {UpdateFormulario, RegistrarDoctor, CleanInputs, registrarDoctorAction} from '../actions/actions'
-import {Redirect} from 'react-router-dom'
+import {UpdateFormulario, registrarDoctorAction} from '../actions/actions'
 
 const mapStateToProps = (state) => {
     return {

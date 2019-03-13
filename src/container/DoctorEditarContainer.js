@@ -1,12 +1,6 @@
 import {connect} from 'react-redux'
 import DoctorEditar from '../components/DoctorEditar'
-import {ActualizarMedico} from '../actions/actions'
-import {UpdateDoctor} from '../services/DoctorService'
-
-// const getDoctor= (doctors, props) => {
-//     console.log(props.match.params.id)
-//     return doctors
-// }
+import {ActualizarMedico, UpdateDoctorAction} from '../actions/actions'
 
 const findDoctor = (doctors, id) => {
     console.log(id)
@@ -35,17 +29,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             if (name == 'telefono') {
                 value = Number.parseInt(value)
             }
-            // console.log(name)
-            // console.log(value)
             dispatch(ActualizarMedico(name, value, ownProps.match.params.id))
         },
         handleBoton: (doctor) => {
-            UpdateDoctor(doctor).then(res => {
-                // console.log(res)
-                ownProps.history.push('/')
-            }).catch(err => {
-                console.log(err)
-            })
+            dispatch(UpdateDoctorAction(doctor, ownProps.history))
         }
     }
 }
