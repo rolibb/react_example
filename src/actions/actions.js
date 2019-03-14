@@ -46,14 +46,23 @@ export const ActualizarMedico = (name, value, doctor_id) => {
     }
 }
 
-export const registrarDoctorAction = (data) => {
+export const ShowError = () => {
+    return {
+        type: 'SHOW_ERROR',
+        payload: {message:'Error al crear doctor por favor intente de nuevo en 10 min.'}
+    }
+}
+
+export const registrarDoctorAction = (data, history) => {
     return dispatch => {
         registrarDoctor(data).then(res => {
             dispatch(RegistrarDoctor(res.data))
             dispatch(CleanInputs())
+            history.push('/')
 
         }).catch(err => {
-            console.log(err)
+            console.log('error al registrar ')
+            dispatch(ShowError())
         })
     }
 }

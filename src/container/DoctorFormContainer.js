@@ -23,8 +23,7 @@ const mapDispatchToProps = (dispatch,  ownProps) => {
             dispatch(UpdateFormulario(name, value))
         },
         handleBoton: (data) => {
-            dispatch(registrarDoctorAction(data))
-            ownProps.history.push('/')
+            dispatch(registrarDoctorAction(data, ownProps.history))
         }
     }
 }

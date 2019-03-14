@@ -1,7 +1,8 @@
 const INITIAL_STATE = {
     nombres:'',
     apellidos:'',
-    telefono:''
+    telefono:'',
+    error: ''
 }
 
 const ReducerFomulario= (state=INITIAL_STATE, action) => {
@@ -14,6 +15,11 @@ const ReducerFomulario= (state=INITIAL_STATE, action) => {
         case 'CLEAN_INPUTS':
             return {
                 ...INITIAL_STATE
+            }
+        case 'SHOW_ERROR':
+            return {
+                ...state,
+                error: action.payload.message
             }
         default:
             return state
