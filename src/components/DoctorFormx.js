@@ -1,10 +1,16 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import './DoctorForm.css'
-const DoctorFormx = ({handleInput, handleBoton, formulario}) => {
+const DoctorFormx = ({handleInput, handleBoton, formulario, match}) => {
+        let show_error = null
+
+        if (formulario.error.length > 0) {
+            show_error = <div className="col-12"> {formulario.error} </div>
+        }
 
     return  (
            <div className="row">
+                {show_error}
                <div className="col-4">
                    <div className="row">
                        <div className="col-12">Nombres:</div>
@@ -37,8 +43,10 @@ const DoctorFormx = ({handleInput, handleBoton, formulario}) => {
                        Registrar Medico
                        </button>
 
-                       <Link className="col-4 btn btn-warning" to="/">
+                       <Link className="col-4 " to="/">
+                       <button className="btn btn-warning">
                         Cancelar
+                        </button>
                        </Link>
                    </div>
                </div>
