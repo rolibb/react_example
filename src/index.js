@@ -10,6 +10,7 @@ import Doctor from './reducers';
 import DoctorFormContainer from './container/DoctorFormContainer'
 import DoctorListContainer from './container/DoctorListContainer'
 import DoctorEditarContainer from './container/DoctorEditarContainer'
+import DoctorProfileContainer from './container/DoctorProfileContainer'
 
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
@@ -27,6 +28,7 @@ const store = createStore(Doctor, applyMiddleware(thunk))
                 <Route path="/" exact component={DoctorListContainer} />
                 <Route path="/crearDoctor/" component={DoctorFormContainer} />
                 <Route path="/editarDoctor/:id" component={DoctorEditarContainer} />
+                <Route path="/perfil/:doctor_id" component={DoctorProfileContainer} />
             </div>
         </Router>
         </Provider>, document.getElementById('root'));

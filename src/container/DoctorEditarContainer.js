@@ -16,7 +16,7 @@ const findDoctor = (doctors, id) => {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        doctor: findDoctor(state.doctors, ownProps.match.params.id)
+        doctor: findDoctor(state.doctors.doctors, ownProps.match.params.id)
     }
 }
 
