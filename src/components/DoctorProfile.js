@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import GoogleMapReact from 'google-map-react'
-// const my_key = 'AIzaSyDwoIrjovsa72-08GMrbHtVrPXvow1NecA'
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>
 
@@ -84,21 +83,5 @@ class DoctorProfile extends Component {
         )
     }
 }
-
-// <GoogleMapReact
-//  bootstrapURLKeys={{ key: 'AIzaSyDwoIrjovsa72-08GMrbHtVrPXvow1NecA' }}
-//  defaultCenter={this.state.center}
-//  defaultZoom={this.state.zoom}
-//  onClick={this._onClick}
-// >
-//  <AnyReactComponent
-//    lat={-17.3938831}
-//    lng={-66.2339158}
-//    text={'Kreyser Avrora'}
-//  />
-//
-// </GoogleMapReact>
-// const DoctorProfile = ({doctor}) =>
-
 
 export default DoctorProfile
