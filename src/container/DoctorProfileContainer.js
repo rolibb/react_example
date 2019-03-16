@@ -1,5 +1,6 @@
 import {connect} from 'react-redux'
 import DoctorProfile from '../components/DoctorProfile'
+import {AgregarUbicacionAction} from '../actions/actions'
 
 const findDoctor = (doctors, id) => {
     console.log(id)
@@ -19,9 +20,19 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        handleBoton: (data) => {
+            const doctor_id = ownProps.match.params.doctor_id
+            // console.log(data)
+            dispatch(AgregarUbicacionAction(doctor_id, data))
+        }
+    }
+}
+
 const DoctorProfileContainer = connect(
  mapStateToProps,
- null
+ mapDispatchToProps
 )(DoctorProfile)
 
 export default DoctorProfileContainer

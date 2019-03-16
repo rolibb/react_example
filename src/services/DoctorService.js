@@ -13,7 +13,10 @@ export const deleteDoctor = (id) => {
     return axios.delete(url+ '/doctors/'+ id)
 }
 
-
 export const UpdateDoctor = (doctor) => {
     return axios.put(url + '/doctors/' + doctor.id, doctor)
+}
+
+export const AgregarUbicacion = (doctor_id, data) => {
+    return axios.post(url + '/doctors/'+doctor_id+'/ubicaciones', data)
 }
